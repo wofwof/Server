@@ -30,7 +30,6 @@ namespace Client
         private static void OnResieve()
         {
             byte[] _sizeInfo = new byte[4];
-            byte[] _recievedBuffer = new byte[1024];
 
             int totalRead, currentRead = 0;
 
