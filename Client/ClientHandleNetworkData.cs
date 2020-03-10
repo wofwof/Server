@@ -38,8 +38,15 @@ namespace Client
             packet.ReadInteger();
             string msg = packet.ReadString();
             packet.Dispose();
-
-            Console.Write($"Server message to licnet on connection ok: {msg}");
+            Console.Write($"Message from server on connection ok: {msg}");
+            try
+            {
+                ClientTCP.ThankYouServer();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\krzys\\Documents\\HackAndSlash\\Server\\Client\\Client.csproj": {}
+    "C:\\Users\\krzys\\Documents\\Server\\Client\\Client.csproj": {}
   },
   "projects": {
-    "C:\\Users\\krzys\\Documents\\HackAndSlash\\Server\\Client\\Client.csproj": {
+    "C:\\Users\\krzys\\Documents\\Server\\Client\\Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\krzys\\Documents\\HackAndSlash\\Server\\Client\\Client.csproj",
+        "projectUniqueName": "C:\\Users\\krzys\\Documents\\Server\\Client\\Client.csproj",
         "projectName": "Client",
-        "projectPath": "C:\\Users\\krzys\\Documents\\HackAndSlash\\Server\\Client\\Client.csproj",
+        "projectPath": "C:\\Users\\krzys\\Documents\\Server\\Client\\Client.csproj",
         "packagesPath": "C:\\Users\\krzys\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\krzys\\Documents\\HackAndSlash\\Server\\Client\\obj\\",
+        "outputPath": "C:\\Users\\krzys\\Documents\\Server\\Client\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

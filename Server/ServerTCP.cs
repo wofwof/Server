@@ -38,11 +38,6 @@ namespace Server
                     _clients[i].StartClient();
                     Console.WriteLine($"Connection from {_clients[i].ip} recieved");
                     SendConnectionOK(i);
-                    SendConnectionOK(i);
-                    SendConnectionOK(i);
-                    SendConnectionOK(i);
-                    SendConnectionOK(i);
-                    SendConnectionOK(i);
                     return;
                 }
             }
@@ -81,7 +76,7 @@ namespace Server
 
         public void StartClient()
         {
-            socket.BeginReceive(_buffer, 0, _buffer.Length, SocketFlags.None, new AsyncCallback(RecieveCallback), null);
+            socket.BeginReceive(_buffer, 0, _buffer.Length, SocketFlags.None, new AsyncCallback(RecieveCallback), socket);
             closing = false;
         }
 
@@ -99,13 +94,18 @@ namespace Server
                 {
                     byte[] databuffer = new byte[recieved];
                     Array.Copy(_buffer, databuffer, recieved);
-                    //HandleNetworkInformation;
+                    ServerHandleNetworkData.HandleNetworkInformation(index, databuffer);
                     socket.BeginReceive(_buffer, 0, _buffer.Length, SocketFlags.None, new AsyncCallback(RecieveCallback), null);
                 }
             }
-            catch (Exception)
+            catch (SocketException e)
             {
-                CloseClient(index);
+                Console.WriteLine($"Error while retrieving data from client: {e.SocketErrorCode.ToString()}");
+                //CloseClient(index);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Exception is: { e.Message }");
             }
         }
 
